@@ -1,0 +1,26 @@
+unnormalized form (UNF) 
+DB(PatientNo,FullName,BedNumber,WardNumber,WardName,DrugNumber,Name,Description,Dosage,Method_of_Admin,Units_per_Day,Start_Date,Finish_Date)
+
+# # --> primary key
+NF1 
+DB(#PatientNo#,FullName,BedNumber,WardNumber,WardName,#DrugNumber#,Name,Description,Dosage,Method_of_Admin,Units_per_Day,#Start_Date#,Finish_Date)
+
+NF2
+DB(PatientNo,FullName)   gegevens patient
+DB(PatientNo,drugnumber,Units_per_Day,Start_Date,Finish_Date,BedNumber,WardNumber,WardName) gegevens ziekenhuis
+DB(DrugNumber,Name,Description,Dosage,Method_of_Admin) gegevens drugs
+
+
+NF3
+DB(PatientNo,FullName)
+DB(PatientNo,WardNumber,WardName,BedNumber)
+DB(PatientNo,DrugNumber)
+DB(DrugNumber,Name,Description,Dosage,Method_of_Admin)
+DB(PatientNo,Units_per_Day,Start_Date,Finish_Date)
+
+DB(PatientNo,FullName)                                                                  gegevens patient
+DB(PatientNo,drugnumber,Units_per_Day,Start_Date,Finish_Date,BedNumber,WardNumber)      gegevens ziekenhuis
+DB(WardNumber,WardName)                                                                 gegevens Ward
+DB(DrugNumber,Name,Description,Dosage,Method_of_Admin)                                  gegevens drugs
+
+Boyce-Codd normal form (BCNF) = NF3
