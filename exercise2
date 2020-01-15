@@ -1,0 +1,23 @@
+unnormalized form (UNF) 
+DB(staffNo,dentistName,patientNo,patientName,appointment_date,appointment_time,surgeryNo)
+
+# # --> primary key
+NF1 
+DB(#staffNo#,dentistName,#patientNo#,patientName,appointment_date,appointment_time,surgeryNo)
+
+NF2
+DB(staffNo,dentistName)
+DB(staffNo,patientNo,patientName,appointment_date,appointment_time)
+DB(staffNo,appointment_date,surgeryNo)
+
+NF3
+DB(staffNo,dentistName)
+DB(staffNo,appointment_date,surgeryNo)
+DB(staffNo,patientNo,appointment_date,appointment_time)
+DB(patientNo,patientName)
+
+Boyce-Codd normal form (BCNF) = NF3
+DB(staffNo,dentistName)
+DB(staffNo,appointment_date,surgeryNo)
+DB(staffNo,patientNo,appointment_date,appointment_time)
+DB(patientNo,patientName)
