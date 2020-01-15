@@ -1,2 +1,15 @@
+mkdir exercises
+
+git init
+
 git remote add origin https://github.com/LodeDenolf/exercises.git
+
+touch exercise1
+
+git add exercise1
+
+git commit
+
+git commit -m "exercise1"
+
 git push -u origin master
